@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HRRR Forecast Viewer</title>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        select, input, button {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #forecastPlot, #observedPlot {
+            margin-top: 40px;
+        }
+
+        .control-row {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>HRRR Forecast Viewer – August 18, 2024</h2>
+
+<div class="control-row">
+    <label>Target Time:</label>
+    <select id="targetSelect"></select>
+
+    <label>Lead (hours):</label>
+    <select id="leadSelect"></select>
+
+    <label>Data Generation Time:</label>
+    <input type="text" id="runTimeBox" readonly>
+</div>
+
+<div class="control-row">
+    <label>Region:</label>
+    <select id="regionSelect"></select>
+
+    <button onclick="updatePlot()">Plot</button>
+</div>
+
+<hr>
+
+<div id="forecastPlot" style="width:100%;height:500px;"></div>
+<div id="observedPlot" style="width:100%;height:500px;"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
