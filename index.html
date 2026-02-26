@@ -23,6 +23,24 @@
             margin-bottom: 15px;
         }
     </style>
+    <style>
+       body { font-family: Arial, sans-serif; margin: 30px; }
+       select, input, button { margin: 5px; padding: 5px; }
+       #forecastPlot, #observedPlot { margin-top: 40px; }
+       .control-row { margin-bottom: 15px; }
+    
+       /* This section makes the image smaller */
+       #regionImageContainer { margin-top: 40px; text-align: center; }
+       #regionPhoto { 
+        max-width: 500px; /* Limits the width so it's not too big */
+        width: 100%;      
+        height: auto; 
+        border: 1px solid #ccc; 
+        border-radius: 8px; 
+        margin-top: 10px; 
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+       }
+</style>
 </head>
 
 <body>
@@ -51,8 +69,13 @@
 
 <div id="forecastPlot" style="width:100%;height:500px;"></div>
 <div id="observedPlot" style="width:100%;height:500px;"></div>
+<div id="regionImageContainer" style="margin-top: 40px; text-align: center;">
+    <h3 id="imageTitle"></h3>
+    <img id="regionPhoto" src="" alt="Region View" style="max-width: 100%; height: auto; border: 1px solid #ccc; display: none;">
+</div>
 
 <script src="script.js"></script>
 
 </body>
 </html>
+
